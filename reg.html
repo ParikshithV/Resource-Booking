@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="resBook.css">
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+    <title>Registration</title>
+  </head>
+  <body class="bg">
+    <div>
+        <ul class="navbar">
+          <li><a href="loginPage.html">Login</a></li>
+          <li><a href="reg.html">Sign-Up</a></li>
+          <li><a href="index.html">About Project</a></li>
+          <li><a href="bookingPg.html">Booking page</a></li>
+        </ul>
+    </div>
+    <div>
+      <h1>Resource booking</h1>
+      <div>
+      <h2 ><center>Create new account :</center></h2>
+    </div>
+  </div>
+    <div>
+    <div id="signupID">
+      <form action="signup" method="post">
+      <h3>Enter details :</h3>
+        <label>Name : </label>
+        <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br>
+
+        <label>Email ID : </label>
+        <input class="txtbx" type="email" id="userEmail" name="userEmail" placeholder="   Required" required><br><br>
+
+        <label>Department : </label>
+        <input class="txtbx2" type="text" id="dept" name="dept" placeholder="MCA"><br><br>
+
+        <label>Role in college : </label>
+        <select name="role">
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+          <option value="other">Other</option>
+        </select><br><br>
+
+        <label>Enter new password : </label>
+        <input class="txtbx" type="password" id="password" name="password" placeholder="   Required" required><br><br>
+        <input class="btn" type="submit"/>
+    </div>
+  </div>
+  <script>
+  //To be done
+  </script>
+ </body>
+</html>

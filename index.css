@@ -64,7 +64,38 @@ html
   border-radius: 12px;
   border: none;
   padding: 5px 20px;
-  margin-top: 80px;
+  margin-top: 15px;
+  margin-left: 100px;
+  width: 15%;
+}
+
+.txtbx {
+  width: 150px;
+  padding: 5px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.txtbx2 {
+  /* width: 150px; */
+  padding: 5px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+aside {
+  width: 25%;
+  padding-left: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  float: right;
+  font-style: italic;
+  background-color: white;
+  border-radius: 10px;
 }
 
 li {

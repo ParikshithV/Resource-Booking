@@ -4,26 +4,20 @@
     <title>Hall Boking</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
-
-    <script>
-      function submitFunc(){
-        var date = document.getElementById("date").value;
-        alert("You have selected\n"+date);
-      }
-    </script>
-
+    <script src="funcs.js"></script>
   </head>
+
   <body class="bg">
     <form>
       <div>
           <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
             <li><a href="loginPage.html">Login</a></li>
             <li><a href="reg.html">Sign-Up</a></li>
-            <li><a href="index.html">About</a></li>
             <li><a href="bookingPg.html">Booking page</a></li>
           </ul>
       </div>
-      <div style="padding-left:15px; width:50%;">
+      <div style="padding-left:15px; width:70%;">
       <h2>Hall Booking</h2>
       <p style="width: 55%">
           Select the date of booking and the equipment needed to check availability.
@@ -36,13 +30,13 @@
       </div><br>
 
       <label>Select equipment needed:</label><br>
-      <input type="checkbox" id="equipment" name="equipment" value="Hand Mic">
+      <input type="checkbox" id="equipment1">
       <label>Hand mic</label><br>
-      <input type="checkbox" id="equipment" name="equipment" value="AudioConsole">
+      <input type="checkbox" id="equipment2">
       <label>Audio console</label><br>
-      <input type="checkbox" id="equipment" name="equipment" value="Speakers">
+      <input type="checkbox" id="equipment3">
       <label>Speakers</label><br>
-      <input type="checkbox" id="equipment" name="equipment" value="Projector">
+      <input type="checkbox" id="equipment4">
       <label>Projector</label><br>
 
       <br><br>
@@ -51,10 +45,7 @@
 
       </div>
       <input type="button" class="btn" value="Check booking" onclick="submitFunc()">
-      
-      <!-- <aside>
-        <p>helo</p>
-      </aside> -->
+
       </form>
     </body>
 </html>

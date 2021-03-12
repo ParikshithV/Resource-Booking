@@ -47,7 +47,7 @@
           <option value="other">Other</option>
         </select><br>
         <label id="srnLabel" style="visibility:collapse">Enter SRN:</label>
-        <input type="text" id="srn" name="srn" style="visibility:collapse"><br><br>
+        <input type="text" class="txtbx" id="srn" name="srn" style="visibility:collapse"><br><br>
 
         <label>Enter new password : </label>
         <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
@@ -65,14 +65,14 @@
       document.getElementById("srnLabel").style.visibility = "visible";
       document.getElementById("srn").style.visibility = "visible";
     }
-    else if (role != "student") {
+    if (role != "student") {
       document.getElementById("srnLabel").style.visibility = "collapse";
       document.getElementById("srn").style.visibility = "collapse";
     }
-    if (role == "other"){
-      document.getElementById("srnLabel").style.visibility = "visible";
-      document.getElementById("srn").style.visibility = "visible";
-    }
+    // if (role == "other"){
+    //   document.getElementById("srnLabel").style.visibility = "visible";
+    //   document.getElementById("srn").style.visibility = "visible";
+    // }
   }
 
   function myFunction()

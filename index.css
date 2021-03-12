@@ -58,6 +58,17 @@ html
   background-color: #333333;
 }
 
+.btnAtIndex {
+  background-color: #0099ff;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  padding: 5px 20px;
+  margin-top: 150px;
+  margin-left: 100px;
+  width: 200px;
+}
+
 .btn {
   background-color: #0099ff;
   color: white;

@@ -21,7 +21,7 @@
   </div>
     <div>
     <div id="signupID">
-      <form action="signup" method="post">
+      <form>
       <h3>Enter details :</h3>
         <label>Username : </label>
         <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br>
@@ -49,9 +49,9 @@
         </select><br><br>
 
         <label>Enter new password : </label>
-        <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: Exactly 8 characters,1 Alphabet in Uppercase and 1 Number"
+        <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
          placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" /><br><br>
-        <input class="btn" onclick="myFunction()" type="submit"/>
+      <input class="btn" onclick="myFunction()" type="submit"/>
     </div>
   </div>
   <script>
@@ -59,7 +59,7 @@
   {
     var x = document.getElementById("userName").value;
      alert(x+", You have registered successfully");
-  //To be done
+  }
   </script>
  </body>
 </html>

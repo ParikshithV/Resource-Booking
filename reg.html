@@ -19,7 +19,6 @@
       <h2 ><center>Create new account :</center></h2>
     </div>
   </div>
-    <div>
     <div id="signupID">
       <form action="signup" method="post">
       <h3>Enter details :</h3>
@@ -43,7 +42,7 @@
 
         <label>Role in college : </label>
         <select name="role">
-          <option value="student">Student</option>
+          <option onclick="visi()" id="V" value="student">Student</option>
           <option value="faculty">Faculty</option>
           <option value="other">Other</option>
         </select><br><br>
@@ -51,15 +50,24 @@
         <label>Enter new password : </label>
         <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: Exactly 8 characters,1 Alphabet in Uppercase and 1 Number"
          placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" /><br><br>
+
+         <label id="V" style="visibility:hidden">Enter SRN:</label>
+         <input type="text" id="V" name="srn" style="visibility:hidden"><br>
+
         <input class="btn" onclick="myFunction()" type="submit"/>
-    </div>
+
   </div>
   <script>
+  function visi()
+  {
+    document.getElementById("V").style.visibility = "visible";
+  }
+
   function myFunction()
   {
     var x = document.getElementById("userName").value;
      alert(x+", You have registered successfully");
-  //To be done
+  }
   </script>
  </body>
 </html>

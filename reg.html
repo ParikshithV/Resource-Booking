@@ -23,14 +23,23 @@
     <div id="signupID">
       <form action="signup" method="post">
       <h3>Enter details :</h3>
-        <label>Name : </label>
+        <label>Username : </label>
         <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br>
 
-        <label>Email ID : </label>
-        <input class="txtbx" type="email" id="userEmail" name="userEmail" placeholder="   Required" required><br><br>
+        <label>Email:</label>
+        <input class="txtbx" type="email" id="userEmail" name="userEmail" placeholder="Required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
 
-        <label>Department : </label>
-        <input class="txtbx2" type="text" id="dept" name="dept" placeholder="MCA"><br><br>
+        <label >Choose your department:</label>
+            <select class="txtbx2" id="dept" name="dept">
+                  <option value="mca">MCA</option>
+                  <option value="bca">BCA</option>
+                  <option value="mcom">M COM</option>
+                  <option value="bcom">B COM</option>
+                  <option value="btech">B TECH</option>
+                  <option value="bpharma">B PHARMA</option>
+                  <option value="mtech">M TECH</option>
+                  <option value="bsc">BSC</option>
+            </select><br><br>
 
         <label>Role in college : </label>
         <select name="role">
@@ -40,11 +49,16 @@
         </select><br><br>
 
         <label>Enter new password : </label>
-        <input class="txtbx" type="password" id="password" name="password" placeholder="   Required" required><br><br>
-        <input class="btn" type="submit"/>
+        <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: Exactly 8 characters,1 Alphabet in Uppercase and 1 Number"
+         placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" /><br><br>
+        <input class="btn" onclick="myFunction()" type="submit"/>
     </div>
   </div>
   <script>
+  function myFunction()
+  {
+    var x = document.getElementById("userName").value;
+     alert(x+", You have registered successfully");
   //To be done
   </script>
  </body>

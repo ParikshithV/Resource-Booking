@@ -22,11 +22,17 @@
         <label>Username : </label>
         <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br4>
         <label>Password : </label>
-        <input class="txtbx" type="password" id="password" name="password" placeholder="   Required" required><br><br>
-        <input class="btn" type="submit"/>
+        <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: Exactly 8 characters, 1 Alphabet in Uppercase and 1 Number"
+         placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" /><br><br>
+        <input class="btn" onclick="myFunction()" type="submit"/>
         <br>
     </div>
     <script>
+        function myFunction()
+        {
+          var x = document.getElementById("userName").value;
+           alert(x+", Welcome  to Resource Booking");
+        }
       //To be done
     </script>
   </body>

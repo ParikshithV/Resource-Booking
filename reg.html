@@ -19,15 +19,14 @@
       <h2 ><center>Create new account :</center></h2>
     </div>
   </div>
-    <div>
     <div id="signupID">
-      <form>
+      <form onsubmit="myFunction()">
       <h3>Enter details :</h3>
         <label>Username : </label>
         <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br>
 
         <label>Email:</label>
-        <input class="txtbx" type="email" id="userEmail" name="userEmail" placeholder="Required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+        <input class="txtbx" type="email" id="userEmail" name="userEmail" placeholder="   Required" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
 
         <label >Choose your department:</label>
             <select class="txtbx2" id="dept" name="dept">
@@ -51,10 +50,19 @@
         <label>Enter new password : </label>
         <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
          placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" /><br><br>
-      <input class="btn" onclick="myFunction()" type="submit"/>
-    </div>
+
+         <label id="V" style="visibility:hidden">Enter SRN:</label>
+         <input type="text" id="V" name="srn" style="visibility:hidden"><br>
+
+        <input class="btn" type="submit"/>
+
   </div>
   <script>
+  function visi()
+  {
+    document.getElementById("V").style.visibility = "visible";
+  }
+
   function myFunction()
   {
     var x = document.getElementById("userName").value;

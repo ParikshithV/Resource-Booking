@@ -88,11 +88,6 @@ h1 {
   border-bottom: 2px solid black;
 }
 
-.graph {
-  max-width: 450px;
-  margin-left: 5%;
-}
-
 .navbar {
   list-style-type: none;
   margin: 0;

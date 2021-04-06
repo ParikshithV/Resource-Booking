@@ -3,14 +3,14 @@
     <link rel="stylesheet" type="text/css" href="resBook.css">
     <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
     <title>Login</title>
-    <?php include 'login.php';?>
+    <?php include 'loginBknd.php';?>
   </head>
   <body class="bg">
     <div>
         <ul class="navbar">
           <li><a href="index.html">Home</a></li>
           <li><a href="loginPage.html">Login</a></li>
-          <li><a href="reg.html">Sign-Up</a></li>
+          <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.html">Booking page</a></li>
         </ul>
     </div>

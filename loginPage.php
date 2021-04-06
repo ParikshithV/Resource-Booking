@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="resBook.css">
     <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
     <title>Login</title>
+    <?php include 'login.php';?>
   </head>
   <body class="bg">
     <div>
@@ -17,12 +18,12 @@
       <h1>Resource booking</h1>
   </div><br><br><br>
     <div id="loginID">
-      <form onsubmit="myFunction()">
+      <form action="LoginBknd.php"method="post">
       <h3>Enter login details :</h3>
         <label>Username : </label>
         <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br4>
         <label>Password : </label>
-        <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
+        <input  class="txtbx" name="Password" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
          placeholder="Enter Password" required/><br><br>
         <input class="btn" type="submit"/>
         <br>

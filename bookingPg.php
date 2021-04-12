@@ -19,18 +19,21 @@
         <form>
         <h2 style="padding-left:15px; padding-top: 5px; text-align: center;">Hall Booking</h2>
         <div class="bookingfrm">
-        <h3>Select date of booking:</h3>
-          <label>Select booking date in:</label>
+        <h3>Select booking date:</h3>
           <table class="dateTable">
             <tr>
               <?php
               $date = date_create();
+              $nMon = date('F', strtotime('+1 months'));
               $days = date_format($date,"t");
+              $nextMonth = date_create(date("Y")."-".date("m", strtotime('+1 months'))."-".date("m"));
+              $nextMdays = date_format($nextMonth,"t");
               $count=0;
               $tdate = date("d");
               $tmonth = date("F")." ";
+              $nextmonth = date("F", strtotime('+1 months'))." ";
               $tyear = date("Y")." ";
-              echo $tmonth." ".$tyear;
+              echo "<th colspan='3'>".$tmonth." ".$tyear."</th>";
               echo "<tr>";
                 for ($i=1; $i <= 7; $i++) {
                   if ($i == $tdate) {
@@ -92,6 +95,39 @@
                   }
                 }
                 echo "</tr>";
+              ?>
+            </tr>
+          </table>
+          <!-- Next month cal display -->
+          <table class="dateTable">
+              <?php
+              echo "<th colspan='3'>".$nMon." ".$tyear."</th>";
+              echo "<tr>";
+                for ($i=1; $i <= 7; $i++) {
+                  echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                }
+                echo "</tr><tr>";
+
+                for ($i=8; $i <= 14; $i++) {
+                  echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                }
+                echo "</tr><tr>";
+
+               for ($i=15; $i <= 21; $i++) {
+                 echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+               }
+               echo "</tr><tr>";
+
+               for ($i=22; $i <= 28; $i++) {
+                 echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+               }
+               echo "</tr><tr>";
+
+               for ($i=29; $i <= $nextMdays; $i++) {
+                 echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+               }
+               echo "</tr>";
+
               ?>
             </tr>
           </table>

@@ -20,78 +20,84 @@
         <h2 style="padding-left:15px; padding-top: 5px; text-align: center;">Hall Booking</h2>
         <div class="bookingfrm">
         <h3>Select date of booking:</h3>
-          <label>Select booking date:</label>
+          <label>Select booking date in:</label>
           <table class="dateTable">
             <tr>
               <?php
+              $date = date_create();
+              $days = date_format($date,"t");
               $count=0;
               $tdate = date("d");
+              $tmonth = date("F")." ";
+              $tyear = date("Y")." ";
+              echo $tmonth." ".$tyear;
               echo "<tr>";
                 for ($i=1; $i <= 7; $i++) {
                   if ($i == $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #69cdff;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #dedede;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
                   }
                   else{
-                    echo "<td class='date' id='d$i'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
                   }
                 }
                 echo "</tr><tr>";
                 for ($i=8; $i <= 14; $i++) {
                   if ($i == $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #69cdff;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #dedede;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
                   }
                   else{
-                    echo "<td class='date' id='d$i'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
                   }
                 }
                 echo "</tr><tr>";
                 for ($i=15; $i <= 21; $i++) {
                   if ($i == $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #69cdff;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #dedede;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
                   }
                   else{
-                    echo "<td class='date' id='d$i'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
                   }
                 }
                 echo "</tr><tr>";
                 for ($i=22; $i <= 28; $i++) {
                   if ($i == $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #69cdff;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #dedede;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
                   }
                   else{
-                    echo "<td class='date' id='d$i'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
                   }
                 }
                 echo "</tr><tr>";
-                for ($i=29; $i <= 31; $i++) {
+                for ($i=29; $i <= $days; $i++) {
                   if ($i == $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #69cdff;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td class='date' id='d$i' style='background-color: #dedede;'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
                   }
                   else{
-                    echo "<td class='date' id='d$i'>".$i."</td>";
+                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
                   }
                 }
                 echo "</tr>";
               ?>
             </tr>
           </table>
-        <br>
-
+        <label>Date selected: </label>
+        <!-- Display selected date -->
+        <br><br>
         <label>Select equipment needed:</label><br>
         <input type="checkbox" id="equipment1">
         <label>Hand mic</label><br>

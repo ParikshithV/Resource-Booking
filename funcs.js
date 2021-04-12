@@ -24,3 +24,7 @@ function submitFunc(form){
     alert("No equipment choosen");
   }
 }
+
+function indate(date){
+
+}

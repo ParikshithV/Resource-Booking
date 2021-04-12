@@ -15,7 +15,7 @@
       if ($upswd == $pswd[0]){
         $_SESSION['uname']=$uname;
         echo "Login successful";
-        header("Location: bookingPg.html");
+        header("Location: bookingPg.php");
       }
       else{
         echo "Incorrect password";

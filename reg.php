@@ -1,7 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="resBook.css">
-    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'> -->
     <title>Registration</title>
     <?php include 'regBknd.php';?>
   </head>
@@ -11,7 +11,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="loginPage.php">Login</a></li>
           <li><a href="reg.php">Sign-Up</a></li>
-          <li><a href="bookingPg.html">Booking page</a></li>
+          <li><a href="bookingPg.php">Booking page</a></li>
         </ul>
     </div>
     <div>

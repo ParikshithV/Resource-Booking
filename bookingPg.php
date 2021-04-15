@@ -14,7 +14,12 @@
             <li><a href="loginPage.php">Login</a></li>
             <li><a href="reg.php">Sign-Up</a></li>
             <li><a href="bookingPg.php">Booking page</a></li>
+            <li><a href="admin.php">Admin page</a></li>
           </ul>
+      </div>
+
+      <div class="column">
+            <img src="side.jpg" alt="side" style="width:100%">
       </div>
         <form>
         <h2 style="padding-left:15px; padding-top: 5px; text-align: center;">Hall Booking</h2>

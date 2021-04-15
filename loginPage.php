@@ -12,6 +12,7 @@
           <li><a href="loginPage.html">Login</a></li>
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
+          <li><a href="admin.php">Admin Page</a></li>
         </ul>
     </div>
     <div>

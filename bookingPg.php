@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="resBook.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> -->
     <script src="funcs.js"></script>
+    <?php include 'bookingBknd.php';?>
+
   </head>
 
   <body class="bg">
@@ -18,11 +20,14 @@
           </ul>
       </div>
 
-      <div class="column">
-            <img src="side.jpg" alt="side" style="width:100%">
-      </div>
-        <form>
+      <form>
         <h2 style="padding-left:15px; padding-top: 5px; text-align: center;">Hall Booking</h2>
+
+        <!-- Side image -->
+        <div>
+              <img align="right" src="side.jpg" style="width: 550px; margin-right: 6.5%; margin-top: 2%;">
+        </div>
+
         <div class="bookingfrm">
         <h3>Select booking date:</h3>
           <table class="dateTable">
@@ -42,61 +47,61 @@
               echo "<tr>";
                 for ($i=1; $i <= 7; $i++) {
                   if ($i == $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   else{
-                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                 }
                 echo "</tr><tr>";
                 for ($i=8; $i <= 14; $i++) {
                   if ($i == $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   else{
-                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                 }
                 echo "</tr><tr>";
                 for ($i=15; $i <= 21; $i++) {
                   if ($i == $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   else{
-                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                 }
                 echo "</tr><tr>";
                 for ($i=22; $i <= 28; $i++) {
                   if ($i == $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   else{
-                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                 }
                 echo "</tr><tr>";
                 for ($i=29; $i <= $days; $i++) {
                   if ($i == $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #69cdff;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   elseif ($i < $tdate) {
-                    echo "<td><input type='button' class='date' id='d$i' style='background-color: #dedede;' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                   else{
-                    echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                   }
                 }
                 echo "</tr>";
@@ -109,36 +114,34 @@
               echo "<th colspan='3'>".$nMon." ".$tyear."</th>";
               echo "<tr>";
                 for ($i=1; $i <= 7; $i++) {
-                  echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                  echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                 }
                 echo "</tr><tr>";
 
                 for ($i=8; $i <= 14; $i++) {
-                  echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                  echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                 }
                 echo "</tr><tr>";
 
                for ($i=15; $i <= 21; $i++) {
-                 echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                 echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                }
                echo "</tr><tr>";
 
                for ($i=22; $i <= 28; $i++) {
-                 echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                 echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                }
                echo "</tr><tr>";
 
                for ($i=29; $i <= $nextMdays; $i++) {
-                 echo "<td><input type='button' class='date' id='d$i' onclick='indate()' value='$i'></td>";
+                 echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
                }
                echo "</tr>";
 
               ?>
             </tr>
           </table>
-        <label>Date selected: </label>
-        <!-- Display selected date -->
-        <br><br>
+        <br>
         <label>Select equipment needed:</label><br>
         <input type="checkbox" id="equipment1">
         <label>Hand mic</label><br>

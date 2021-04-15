@@ -20,11 +20,6 @@ h1 {
 }
 
 .date{
-  width: 35px;
-  border: 1px solid black;
-  border-radius: 15px;
-  padding: 5px;
-  background-color: white;
   text-align: center;
 }
 
@@ -145,9 +140,7 @@ li a:hover {
   background-color: #111111;
 }
 
-.column {
-  float: right;
-  width: 50%;
-  padding: 0px;
-  /* padding-top: 20px; */
+.image {
+  width: 700px;
+  margin-right: 20px;
   }

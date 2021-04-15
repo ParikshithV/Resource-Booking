@@ -18,11 +18,11 @@
           </ul>
       </div>
 
-      <div class="column">
-            <img src="side.jpg" alt="side" style="width:100%">
-      </div>
-        <form>
+      <form>
         <h2 style="padding-left:15px; padding-top: 5px; text-align: center;">Hall Booking</h2>
+        <div>
+              <img align="right" src="side.jpg" style="width: 550px; margin-right: 6.5%; margin-top: 2%;">
+        </div>
         <div class="bookingfrm">
         <h3>Select booking date:</h3>
           <table class="dateTable">

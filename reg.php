@@ -3,14 +3,16 @@
     <link rel="stylesheet" type="text/css" href="resBook.css">
     <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
     <title>Registration</title>
+    <?php include 'regBknd.php';?>
   </head>
   <body class="bg">
     <div>
         <ul class="navbar">
           <li><a href="index.html">Home</a></li>
-          <li><a href="loginPage.html">Login</a></li>
-          <li><a href="reg.html">Sign-Up</a></li>
+          <li><a href="loginPage.php">Login</a></li>
+          <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.html">Booking page</a></li>
+          <li><a href="admin.php">Admin page</a></li>
         </ul>
     </div>
     <div>
@@ -20,7 +22,7 @@
     </div>
   </div>
     <div id="signupID">
-      <form onsubmit="myFunction()">
+      <form action="regBknd.php" method="post">
       <h3>Enter details :</h3>
         <label>Username : </label>
         <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br>
@@ -30,28 +32,29 @@
 
         <label >Choose your department:</label>
             <select class="txtbx2" id="dept" name="dept">
-                  <option value="mca">MCA</option>
-                  <option value="bca">BCA</option>
-                  <option value="mcom">M.COM</option>
-                  <option value="bcom">B.COM</option>
-                  <option value="btech">B.TECH</option>
-                  <option value="bpharma">B.PHARMA</option>
-                  <option value="mtech">M.TECH</option>
-                  <option value="bsc">BSc</option>
+                  <option value="MCA">MCA</option>
+                  <option value="BCA">BCA</option>
+                  <option value="M.Com">M.Com</option>
+                  <option value="B.Com">B.Com</option>
+                  <option value="B.Tech">B.Tech</option>
+                  <option value="B.Pharma">B.Pharma</option>
+                  <option value="M.Tech">M.Tech</option>
+                  <option value="BSC">BSc</option>
             </select><br><br>
 
         <label>Role in college : </label>
         <select onchange="visi()" class="txtbx2" name="role" id="role">
-          <option value="faculty">Faculty</option>
-          <option value="student">Student</option>
-          <option value="other">Other</option>
+          <option value="Faculty">Faculty</option>
+          <option value="Student">Student</option>
+          <option value="Other">Other</option>
         </select><br>
         <label id="srnLabel" style="visibility:collapse">Enter SRN:</label>
-        <input type="text" class="txtbx" id="srn" name="srn" style="visibility:collapse"><br><br>
+        <input type="text" class="txtbx" id="srn" name="srn" value=" " style="visibility:collapse"><br><br>
 
         <label>Enter new password : </label>
-        <input  class="txtbx" name="txtPassword" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
-         placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" /><br><br>
+        <input  class="txtbx" name="Password" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
+         placeholder="Enter Password" /><br><br>
+         <!-- required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" -->
 
         <input class="btn" type="submit"/>
 
@@ -61,11 +64,11 @@
   {
     var role = document.getElementById("role").value;
     console.log(role);
-    if (role == "student"){
+    if (role == "Student"){
       document.getElementById("srnLabel").style.visibility = "visible";
       document.getElementById("srn").style.visibility = "visible";
     }
-    if (role != "student") {
+    if (role != "Student") {
       document.getElementById("srnLabel").style.visibility = "collapse";
       document.getElementById("srn").style.visibility = "collapse";
     }

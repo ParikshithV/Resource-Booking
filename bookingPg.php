@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="resBook.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> -->
     <script src="funcs.js"></script>
+    <?php include 'bookingBknd.php';?>
+
   </head>
 
   <body class="bg">
@@ -20,9 +22,12 @@
 
       <form>
         <h2 style="padding-left:15px; padding-top: 5px; text-align: center;">Hall Booking</h2>
+
+        <!-- Side image -->
         <div>
               <img align="right" src="side.jpg" style="width: 550px; margin-right: 6.5%; margin-top: 2%;">
         </div>
+
         <div class="bookingfrm">
         <h3>Select booking date:</h3>
           <table class="dateTable">

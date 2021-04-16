@@ -6,7 +6,6 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> -->
     <script src="funcs.js"></script>
     <?php include 'bookingBknd.php';?>
-
   </head>
 
   <body class="bg">
@@ -20,7 +19,7 @@
           </ul>
       </div>
 
-      <form>
+      <form action="bookingBknd.php" method="post">
         <h2 style="padding-left:15px; padding-top: 5px; text-align: center;">Hall Booking</h2>
 
         <!-- Side image -->

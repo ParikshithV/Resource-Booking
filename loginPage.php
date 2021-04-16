@@ -4,12 +4,13 @@
     <!-- <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'> -->
     <title>Login</title>
     <?php include 'loginBknd.php';?>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body class="bg">
     <div>
         <ul class="navbar">
           <li><a href="index.html">Home</a></li>
-          <li><a href="loginPage.html">Login</a></li>
+          <li><a href="loginPage.php">Login</a></li>
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin Page</a></li>
@@ -29,13 +30,11 @@
         <input class="btn" type="submit"/>
         <br>
     </div>
-    <script>
-        function myFunction()
-        {
-          var x = document.getElementById("userName").value;
-           alert("Hi "+x+", Welcome  to Resource Booking");
-        }
-      //To be done
-    </script>
+    <?php
+      if(isset($_SESSION['error'])){
+        echo '<script>swal("Error", "Invalid username or password", "error");</script>';
+        session_unset();
+      }
+    ?>
   </body>
 </html>

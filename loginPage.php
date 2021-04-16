@@ -13,6 +13,15 @@
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin Page</a></li>
+          <?php
+          if(isset($_SESSION['uname'])){
+            echo '<li style="float: right;"><a href="index.html">Logout</a></li>';
+          }
+          else{
+            echo '<li style="float: right;"><a href="index.html">Login</a></li>';
+
+          }
+          ?>
         </ul>
     </div>
     <div>
@@ -37,5 +46,17 @@
         }
       //To be done
     </script>
+
+    <?php
+    if(isset($_SESSION['username']))
+    {
+      session_start();
+      unset($_SESSION);
+      session_destroy();
+      session_write_close();
+      header('Location:/login.php');
+      die;
+    }
+    ?>
   </body>
 </html>

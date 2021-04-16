@@ -3,6 +3,7 @@
 <head>
   <!-- <link href='' rel='stylesheet'> -->
   <link rel="stylesheet" type="text/css" href="admin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
   <style>
       body 

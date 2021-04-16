@@ -2,6 +2,7 @@
   <head>
     <meta charset="utf-8">
     <title>Hall Boking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resBook.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> -->
     <script src="funcs.js"></script>

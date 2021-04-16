@@ -4,6 +4,7 @@
     <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
     <title>Registration</title>
     <?php include 'regBknd.php';?>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body class="bg">
     <div>
@@ -85,5 +86,11 @@
      alert(x+", You have registered successfully");
   }
   </script>
+  <?php
+    if(isset($_SESSION['error'])){
+      echo '<script>swal("Error", "Username already taken", "error");</script>';
+      session_unset();
+    }
+  ?>
  </body>
 </html>

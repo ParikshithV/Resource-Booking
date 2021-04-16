@@ -30,3 +30,9 @@
     }
   }
 ?>
+
+<script>
+  function logout(){
+    sessionStorage.clear();
+  }
+</script>

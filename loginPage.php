@@ -16,11 +16,10 @@
           <li><a href="admin.php">Admin Page</a></li>
           <?php
           if(isset($_SESSION['uname'])){
-            echo '<li style="float: right;"><a href="index.html">Logout</a></li>';
+            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
           }
           else{
             echo '<li style="float: right;"><a href="index.html">Login</a></li>';
-
           }
           ?>
         </ul>
@@ -40,7 +39,7 @@
         <br>
     </div>
     <?php
-        
+
       if(isset($_SESSION['error'])){
         echo '<script>swal("Error", "Invalid username or password", "error");</script>';
         session_unset();

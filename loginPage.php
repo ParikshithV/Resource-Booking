@@ -14,6 +14,15 @@
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin Page</a></li>
+          <?php
+          if(isset($_SESSION['uname'])){
+            echo '<li style="float: right;"><a href="index.html">Logout</a></li>';
+          }
+          else{
+            echo '<li style="float: right;"><a href="index.html">Login</a></li>';
+
+          }
+          ?>
         </ul>
     </div>
     <div>
@@ -31,10 +40,12 @@
         <br>
     </div>
     <?php
+        
       if(isset($_SESSION['error'])){
         echo '<script>swal("Error", "Invalid username or password", "error");</script>';
         session_unset();
       }
+
     ?>
   </body>
 </html>

@@ -12,8 +12,9 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="loginPage.php">Login</a></li>
           <li><a href="reg.php">Sign-Up</a></li>
-          <li><a href="bookingPg.html">Booking page</a></li>
+          <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin page</a></li>
+          <li style="float: right;"><a href="index.html">Logout</a></li>
         </ul>
     </div>
     <div>

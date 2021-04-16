@@ -19,7 +19,8 @@
     $userexist = mysqli_query($db, $login_search);
     $user_check = mysqli_fetch_array($userexist);
     if (count($user_check) > 0){
-      echo "User exists!";
+      $_SESSION['error']="regError";
+      header("Location: reg.php");
     }
     else{
       mysqli_query($db, $insuser);

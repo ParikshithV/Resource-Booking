@@ -54,7 +54,7 @@
         <input type="text" class="txtbx" id="srn" name="srn" value=" " style="visibility:collapse"><br><br>
 
         <label>Enter new password : </label>
-        <input  class="txtbx" name="Password" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
+        <input  class="txtbx" name="Password" type="password" id="txtPassword"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
          placeholder="Enter Password" /><br><br>
          <!-- required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" -->
 
@@ -92,5 +92,13 @@
       session_unset();
     }
   ?>
+  <?php
+          if(isset($_SESSION['uname'])){
+            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
+          }
+          else{
+            echo '<li style="float: right;"><a href="index.html">Login</a></li>';
+          }
+          ?>
  </body>
 </html>

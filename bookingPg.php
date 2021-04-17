@@ -21,7 +21,7 @@
           </ul>
       </div>
 
-      <form>
+      <form action='bookingBknd.php' method='post'>
         <h2 style="padding-left:15px; padding-top: 5px; text-align: center;">Hall Booking</h2>
 
         <!-- Side image -->
@@ -43,8 +43,11 @@
               $tdate = date("d");
               $tmonth = date("F")." ";
               $nextmonth = date("F", strtotime('+1 months'))." ";
-              $tyear = date("Y")." ";
-              echo "<th colspan='3'>".$tmonth." ".$tyear."</th>";
+              $tyear = date("Y");
+
+              // $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$tmonth-$tyear'";
+
+              echo "<th colspan='3'>".$tmonth." ".$tyear." </th>";
               echo "<tr>";
                 for ($i=1; $i <= 7; $i++) {
                   if ($i == $tdate) {
@@ -54,7 +57,15 @@
                     echo "<td class='date' style='background-color: #dedede;'> $i <br> </td>";
                   }
                   else{
-                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
+                    $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$tmonth-$tyear'";
+                    $bookingexist = mysqli_query($db, $date_search);
+                    $booking_check = mysqli_fetch_array($bookingexist);
+                    if ($booking_check!=NULL){
+                      echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                    }
+                    else {
+                      echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$tmonth-$tyear'></td>";
+                    }
                   }
                 }
                 echo "</tr><tr>";
@@ -66,8 +77,15 @@
                     echo "<td class='date' style='background-color: #dedede;'> $i <br> </td>";
                   }
                   else{
-                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-                  }
+                    $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$tmonth-$tyear'";
+                    $bookingexist = mysqli_query($db, $date_search);
+                    $booking_check = mysqli_fetch_array($bookingexist);
+                    if ($booking_check!=NULL){
+                      echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                    }
+                    else {
+                      echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$tmonth-$tyear'></td>";
+                    }                  }
                 }
                 echo "</tr><tr>";
                 for ($i=15; $i <= 21; $i++) {
@@ -78,8 +96,15 @@
                     echo "<td class='date' style='background-color: #dedede;'> $i <br> </td>";
                   }
                   else{
-                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-                  }
+                    $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$tmonth-$tyear'";
+                    $bookingexist = mysqli_query($db, $date_search);
+                    $booking_check = mysqli_fetch_array($bookingexist);
+                    if ($booking_check!=NULL){
+                      echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                    }
+                    else {
+                      echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$tmonth-$tyear'></td>";
+                    }                  }
                 }
                 echo "</tr><tr>";
                 for ($i=22; $i <= 28; $i++) {
@@ -90,8 +115,15 @@
                     echo "<td class='date' style='background-color: #dedede;'> $i <br> </td>";
                   }
                   else{
-                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-                  }
+                    $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$tmonth-$tyear'";
+                    $bookingexist = mysqli_query($db, $date_search);
+                    $booking_check = mysqli_fetch_array($bookingexist);
+                    if ($booking_check!=NULL){
+                      echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                    }
+                    else {
+                      echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$tmonth-$tyear'></td>";
+                    }                  }
                 }
                 echo "</tr><tr>";
                 for ($i=29; $i <= $days; $i++) {
@@ -102,8 +134,15 @@
                     echo "<td class='date' style='background-color: #dedede;'> $i <br> </td>";
                   }
                   else{
-                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-                  }
+                    $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$tmonth-$tyear'";
+                    $bookingexist = mysqli_query($db, $date_search);
+                    $booking_check = mysqli_fetch_array($bookingexist);
+                    if ($booking_check!=NULL){
+                      echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                    }
+                    else {
+                      echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$tmonth-$tyear'></td>";
+                    }                  }
                 }
                 echo "</tr>";
               ?>
@@ -112,31 +151,66 @@
           <!-- Next month cal display -->
           <table class="dateTable">
               <?php
-              echo "<th colspan='3'>".$nMon." ".$tyear."</th>";
+              echo "<th colspan='3'>".$nMon." ".$tyear." </th>";
               echo "<tr>";
                 for ($i=1; $i <= 7; $i++) {
-                  echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-                }
+                  $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$nMon-$tyear'";
+                  $bookingexist = mysqli_query($db, $date_search);
+                  $booking_check = mysqli_fetch_array($bookingexist);
+                  if ($booking_check!=NULL){
+                    echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                  }
+                  else {
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$nMon-$tyear'></td>";
+                  }                }
                 echo "</tr><tr>";
 
                 for ($i=8; $i <= 14; $i++) {
-                  echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-                }
+                  $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$nMon-$tyear'";
+                  $bookingexist = mysqli_query($db, $date_search);
+                  $booking_check = mysqli_fetch_array($bookingexist);
+                  if ($booking_check!=NULL){
+                    echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                  }
+                  else {
+                    echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$nMon-$tyear'></td>";
+                  }                }
                 echo "</tr><tr>";
 
                for ($i=15; $i <= 21; $i++) {
-                 echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-               }
+                 $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$nMon-$tyear'";
+                 $bookingexist = mysqli_query($db, $date_search);
+                 $booking_check = mysqli_fetch_array($bookingexist);
+                 if ($booking_check!=NULL){
+                   echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                 }
+                 else {
+                   echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$nMon-$tyear'></td>";
+                 }               }
                echo "</tr><tr>";
 
                for ($i=22; $i <= 28; $i++) {
-                 echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-               }
+                 $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$nMon-$tyear'";
+                 $bookingexist = mysqli_query($db, $date_search);
+                 $booking_check = mysqli_fetch_array($bookingexist);
+                 if ($booking_check!=NULL){
+                   echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                 }
+                 else {
+                   echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$nMon-$tyear'></td>";
+                 }               }
                echo "</tr><tr>";
 
                for ($i=29; $i <= $nextMdays; $i++) {
-                 echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' onclick='datein()' value='$i'></td>";
-               }
+                 $date_search = "SELECT * FROM `resmng`.`bookingdb` WHERE `date` = '$i-$nMon-$tyear'";
+                 $bookingexist = mysqli_query($db, $date_search);
+                 $booking_check = mysqli_fetch_array($bookingexist);
+                 if ($booking_check!=NULL){
+                   echo "<td class='date' style='background-color: #ff7066;'> $i <br> </td>";
+                 }
+                 else {
+                   echo "<td class='date'> $i <br> <input type='radio' id='dsel' name='dsel' value='$i-$nMon-$tyear'></td>";
+                 }               }
                echo "</tr>";
 
               ?>
@@ -144,20 +218,20 @@
           </table>
         <br>
         <label>Select equipment needed:</label><br>
-        <input type="checkbox" id="equipment1">
+        <input type="checkbox" name="equipment[]" value="Hand mic">
         <label>Hand mic</label><br>
-        <input type="checkbox" id="equipment2">
+        <input type="checkbox" name="equipment[]" value="Audio console">
         <label>Audio console</label><br>
-        <input type="checkbox" id="equipment3">
+        <input type="checkbox" name="equipment[]" value="Speakers">
         <label>Speakers</label><br>
-        <input type="checkbox" id="equipment4">
+        <input type="checkbox" name="equipment[]" value="Projector">
         <label>Projector</label><br>
 
         <br><br>
         <label>Additional comments:</label><br>
         <textarea class="txtbx2" name="adsdCom" rows="5" cols="35"></textarea><br>
 
-        <input type="button" style="margin-top: 5px" class="btn" value="Check booking" onclick="submitFunc()">
+        <input type="submit" style="margin-top: 5px" class="btn" value="Check booking">
 
         </form>
       </div>

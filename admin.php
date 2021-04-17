@@ -53,7 +53,7 @@
 </div>
 <h1 style="text-align: center;">ADMIN DASHBOARD:</h1>
 <div class="box1">
-  <h3 style="text-align: center;">USERS</h3>
+  <h1 style="text-align: center;">USERS</h1>
 <table>
     <tr>
       <th>SERIAL NO.</th>

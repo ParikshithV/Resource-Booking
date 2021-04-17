@@ -6,7 +6,7 @@
     background-color: #333;
   } */
 
-  
+
 .bg{
     margin:0px;
     padding:0;
@@ -26,11 +26,11 @@
     overflow: hidden;
     background-color: #333333;
   }
-  
+
   li {
     float: left;
   }
-  
+
   li a {
     display: block;
     color: white;
@@ -38,7 +38,7 @@
     padding:16px;
     text-decoration: none;
   }
-  
+
   li a:hover {
     background-color: #111;
   }
@@ -60,11 +60,11 @@
   .box1 {
     float: left;
     width: 500px;
-    height: 300px;
+    height: 400px;
     margin-left: 10px;
     margin-top: 5px;
     position: relative;
-    left: 18%;
+    left: 10%;
     background-color: rgb(182, 228, 255);
     border-radius: 10px;
     padding: 20px;

@@ -47,7 +47,7 @@
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin page</a></li>
-          <li style="float: right;"><a href="index.html">Logout</a></li>
+          <li style="float: right;"><a href="logout.php">Logout</a></li>
         </ul>
 </div>
 <h1 style="text-align: center;">ADMIN DASHBOARD:</h1>

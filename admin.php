@@ -48,7 +48,7 @@
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin page</a></li>
-          <li style="float: right;"><a href="index.html">Logout</a></li>
+          <li style="float: right;"><a href="lo.html">Logout</a></li>
         </ul>
 </div>
 <h1 style="text-align: center;">ADMIN DASHBOARD:</h1>
@@ -81,25 +81,42 @@
 
   <div class="box">
 
-  <h1 style="text-align: center;">EQUIPMENTS</h1>
+  <h1 style="text-align: center;">BOOKINGS</h1>
 <table>
     <tr>
       <th>SERIAL NO.</th>
-      <th>EQUIPMENTS SELECTED</th>
-      <th>ADDITIONAL COMMENTS</th>
+      <th>USERNAME</th>
+      <th>EMAIL</th>
+      <th>DEPT.</th>
+      <th>ROLE</th>
+      <th>DATE</th>
+      <th>EQIPMENT</th>
   <?php
   $slno = 0;
   $db = mysqli_connect("localhost", "root", "", "resmng");
-  $feedback = "select * from resmng.equipmentdb";
+  $feedback = "select * from resmng.bookingdb";
   $result = mysqli_query($db, $feedback);
   while ($row = mysqli_fetch_assoc($result)) {
       $slno = $slno+1;
       echo "<tr><td> ".$slno." </td>";
-      echo "<td>".$row['equip_name']."</td>";
-      echo "<td>".$row['Status']."</td>";
+      echo "<td>".$row['username']."</td>";
+      echo "<td>".$row['email']."</td>";
+      echo "<td>".$row['dept']."</td>";
+      echo "<td>".$row['role']."</td>";
+      echo "<td>".$row['date']."</td>";
+      echo "<td>".$row['equipment']."</td>";
       echo "<br>";
   }
   ?>
+
+<?php
+          if(isset($_SESSION['uname'])){
+            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
+          }
+          else{
+            echo '<li style="float: right;"><a href="index.html">Login</a></li>';
+          }
+          ?>
   </table>
   </div>
  

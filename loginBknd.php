@@ -47,6 +47,7 @@
       }
     }
     else if($upswd == 'admin123') {
+      $_SESSION['admin']="adminLogin";
       header("Location: admin.php");
     }
     else{

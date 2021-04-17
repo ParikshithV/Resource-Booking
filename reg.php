@@ -99,13 +99,6 @@
       session_unset();
     }
   ?>
-  <?php
-          if(isset($_SESSION['uname'])){
-            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
-          }
-          else{
-            echo '<li style="float: right;"><a href="index.html">Login</a></li>';
-          }
-          ?>
+
  </body>
 </html>

@@ -80,7 +80,7 @@
   </table>
   </div>
 
-  <div class="box">
+  <div class="box1">
 
   <h1 style="text-align: center;">BOOKINGS</h1>
 <table>
@@ -110,14 +110,6 @@
   }
   ?>
 
-<?php
-          if(isset($_SESSION['uname'])){
-            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
-          }
-          else{
-            echo '<li style="float: right;"><a href="index.php">Login</a></li>';
-          }
-          ?>
   </table>
   </div>
   <?php

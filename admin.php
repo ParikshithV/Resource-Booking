@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="admin.css">
   <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
   <style>
-      body 
+      body
       {
           font-family: 'Pacifico';font-size: 14px;
       }
@@ -15,13 +15,13 @@
           color:orange;
 
         }
-      table 
+      table
       {
         border-collapse: separate;
         width: 100%;
       }
 
-      th, td 
+      th, td
       {
         text-align: left;
         padding: 5px;
@@ -32,7 +32,7 @@
 
       tr:nth-child(odd) {background-color: yellow;}
 
-      table, th, td 
+      table, th, td
       {
         border: 1px solid black;
         border-collapse: collapse;
@@ -61,6 +61,7 @@
       <th>DEPARTMENT</th>
       <th>ROLE</th>
   <?php
+  session_start();
   $slno = 0;
   $db = mysqli_connect("localhost", "root", "", "resmng");
   $feedback = "select * from resmng.users";
@@ -101,6 +102,13 @@
   ?>
   </table>
   </div>
- 
+  <?php
+  if(isset($_SESSION['admin'])){
+    //Do nothing
+  }
+  else{
+    header("Location: loginPage.php");
+  }
+  ?>
 </body>
 </html>

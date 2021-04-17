@@ -235,11 +235,11 @@
         <input type="checkbox" name="equipment[]" value="Projector">
         <label>Projector</label><br>
 
-        <br><br>
-        <label>Additional comments:</label><br>
-        <textarea class="txtbx2" name="adsdCom" rows="5" cols="35"></textarea><br>
+        <br>
+        <!-- <label>Additional comments:</label><br>
+        <textarea class="txtbx2" name="adsdCom" rows="5" cols="35"></textarea><br> -->
 
-        <input type="submit" style="margin-top: 5px" class="btn" value="Check booking">
+        <input type="submit" style="float: right; margin-top: 5px; margin-right: 250px" class="btn" value="Book Hall">
 
         </form>
       </div>

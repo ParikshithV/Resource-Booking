@@ -2,6 +2,7 @@
   <head>
     <meta charset="utf-8">
     <title>Hall Boking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resBook.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> -->
     <script src="funcs.js"></script>
@@ -12,7 +13,7 @@
   <body class="bg">
       <div>
           <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="loginPage.php">Login</a></li>
             <li><a href="reg.php">Sign-Up</a></li>
             <li><a href="bookingPg.php">Booking page</a></li>
@@ -242,5 +243,13 @@
 
         </form>
       </div>
+      <?php
+          if(isset($_SESSION['uname'])){
+            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
+          }
+          else{
+            echo '<li style="float: right;"><a href="index.php">Login</a></li>';
+          }
+          ?>
     </body>
 </html>

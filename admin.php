@@ -100,6 +100,7 @@
     $delEquip = $_POST['equipment'];
     $outEquip = "DELETE FROM `resmng`.`equipments` WHERE equipment_name = '$delEquip'";
     mysqli_query($db, $outEquip);
+    header("Location: admin.php");
   }
 
   if(isset($_POST['addEquip'])){

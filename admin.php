@@ -58,28 +58,32 @@
 ?>
 
 <!-- Add CSS -->
-<div align="center">
-  <form action="admin.php" method="post">
-    <label>Add equipment: </label>
-    <input type="text" name="addEquip"><br>
-    <input type="submit" class="btn">
-  </form>
-</div>
+<div class="box">
+    <div align="center">
+      <h3 style="text-align: center;">MANAGING EQUIPMENTS:</h3>
+      <form action="admin.php" method="post">
+        <label><h3> Add Equipment: </h3></label>
+        <input type="text" name="addEquip" required>
+        <input type="submit" class="btn"><br>
+      </form>
+    </div>
 
-<!-- Add CSS -->
-<div align="center">
-  <form action="admin.php" method="post">
-    <?php
-    $getEquip = "select * from `resmng`.`equipments`;";
-    $equipments = mysqli_query($db, $getEquip);
-    while ($row = mysqli_fetch_assoc($equipments)) {
-      echo '<input type="radio" name="equipment" value="'.$row['equipment_name'].'">';
-      echo '<label>'.$row['equipment_name'].'</label><br>';
-    }
-    echo '<input type="submit">';
-    ?>
-  </form>
-</div>
+    <!-- Add CSS -->
+    <div align="center">
+      <form action="admin.php" method="post">
+      <label><h3>Delete Equipments: </h3></label>
+        <?php
+        $getEquip = "select * from `resmng`.`equipments`;";
+        $equipments = mysqli_query($db, $getEquip);
+        while ($row = mysqli_fetch_assoc($equipments)) {
+          echo '<input type="radio" name="equipment" value="'.$row['equipment_name'].'">';
+          echo '<label>'.$row['equipment_name'].'</label><br>';
+        }
+        echo '<input type="submit">';
+        ?>
+      </form>
+    </div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div class="box1">
   <h1 style="text-align: center;">USERS</h1>

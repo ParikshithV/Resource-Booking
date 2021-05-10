@@ -1,7 +1,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About</title>
     <link rel="stylesheet" href="index.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> -->
@@ -9,19 +8,12 @@
   <body class="bg">
     <div >
         <ul class="navbar">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="loginPage.php">Login</a></li>
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin Page</a></li>
-          <?php
-          if(isset($_SESSION['uname'])){
-            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
-          }
-          else{
-            echo '<li style="float: right;"><a href="index.php">Login</a></li>';
-          }
-          ?>
+
         </ul>
     </div>
 
@@ -40,12 +32,11 @@
     <center>
     <h1>About The Project</h2>
     <p style="width: 55%">
-      <h3>
         The aim is to create an interface which can be put to use in order to facilitate anybody who needs to utilize the department seminar hall at available timings with available equipment which may be needed for the event.    </p></center>
-      </h3>
+      </p>
     <center style="padding-top: 2%">
       <h3>Facilities and available equipment:</h3>
-    <div class="box">
+    <div class="box" style="margin-bottom: 50px">
       <h2>About</h2>
       <p style="text-align: left">
         MCA department has a seminar hall with projectors, mike and sound equipment.
@@ -54,7 +45,7 @@
         The data needs to be taken from the database where the user input data would be stored.
       </p>
     </div>
-    <div class="box">
+    <div class="box" style="margin-bottom: 50px">
       <h2>Facilities provided</h2>
       <p style="text-align: left">
         The project will contain functionalities for registration, user session login,
@@ -62,7 +53,7 @@
         The user would also be able to edit the booking details such as rescheduling, opting the equipment required and cancellation of booking.
       </p>
     </div>
-    <div class="box">
+    <div class="box" style="margin-bottom: 50px">
       <h2>Available equipment:</h2>
         <ul>
           <li>Hand mic</li><br>
@@ -74,7 +65,5 @@
         <!-- <input type="button" class="btnAtIndex" value="&#x2192Go to Hall Booking Page" onclick="location.href='bookingPg.php';"> -->
     </div>
     </center>
-    
-          
     </body>
 </html>

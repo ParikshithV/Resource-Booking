@@ -14,7 +14,14 @@
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin page</a></li>
-          <li style="float: right;"><a href="index.html">Logout</a></li>
+          <?php
+          if(isset($_SESSION['uname'])){
+            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
+          }
+          else{
+            echo '<li style="float: right;"><a href="loginPage.php">Login</a></li>';
+          }
+          ?>
         </ul>
     </div>
     <div>
@@ -92,13 +99,6 @@
       session_unset();
     }
   ?>
-  <?php
-          if(isset($_SESSION['uname'])){
-            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
-          }
-          else{
-            echo '<li style="float: right;"><a href="index.html">Login</a></li>';
-          }
-          ?>
+
  </body>
 </html>

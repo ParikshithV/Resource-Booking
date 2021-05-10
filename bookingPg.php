@@ -18,6 +18,14 @@
             <li><a href="reg.php">Sign-Up</a></li>
             <li><a href="bookingPg.php">Booking page</a></li>
             <li><a href="admin.php">Admin page</a></li>
+            <?php
+            if(isset($_SESSION['uname'])){
+              echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
+            }
+            else{
+              echo '<li style="float: right;"><a href="loginPage.php">Login</a></li>';
+            }
+            ?>
           </ul>
       </div>
 
@@ -227,21 +235,14 @@
         <input type="checkbox" name="equipment[]" value="Projector">
         <label>Projector</label><br>
 
-        <br><br>
-        <label>Additional comments:</label><br>
-        <textarea class="txtbx2" name="adsdCom" rows="5" cols="35"></textarea><br>
+        <br>
+        <!-- <label>Additional comments:</label><br>
+        <textarea class="txtbx2" name="adsdCom" rows="5" cols="35"></textarea><br> -->
 
-        <input type="submit" style="margin-top: 5px" class="btn" value="Check booking">
+        <input type="submit" style="float: right; margin-top: 5px; margin-right: 250px" class="btn" value="Book Hall">
 
         </form>
       </div>
-      <?php
-          if(isset($_SESSION['uname'])){
-            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
-          }
-          else{
-            echo '<li style="float: right;"><a href="index.php">Login</a></li>';
-          }
-          ?>
+
     </body>
 </html>

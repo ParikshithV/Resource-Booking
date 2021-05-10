@@ -2,9 +2,7 @@
 session_start();
 
 $db = mysqli_connect("localhost", "root", "", "resmng");
-$createEqdb = "CREATE TABLE IF NOT EXISTS `resmng`.`equipmentdb` (`equip_name` VARCHAR(45), `Status` VARCHAR(10));";
 $createBkdb = "CREATE TABLE IF NOT EXISTS `resmng`.`bookingdb` (`username` VARCHAR(50), `email` VARCHAR(50), `dept` VARCHAR(50), `role` VARCHAR(100), `date` VARCHAR(50), `equipment` VARCHAR(100));";
-mysqli_query($db, $createEqdb);
 mysqli_query($db, $createBkdb);
 
 if(isset($_SESSION['uname'])){

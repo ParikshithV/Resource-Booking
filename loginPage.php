@@ -28,7 +28,7 @@
       <h1>Resource booking</h1>
   </div><br><br><br>
     <div id="loginID">
-      <form action="LoginBknd.php"method="post">
+      <form action="loginBknd.php"method="post">
       <h3>Enter login details :</h3>
         <label>Username : </label>
         <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br4>

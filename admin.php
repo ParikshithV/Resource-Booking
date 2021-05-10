@@ -52,6 +52,35 @@
         </ul>
 </div>
 <h1 style="text-align: center;">ADMIN DASHBOARD:</h1>
+<?php
+  $db = mysqli_connect("localhost", "root", "", "resmng");
+  session_start();
+?>
+
+<!-- Add CSS -->
+<div align="center">
+  <form action="admin.php" method="post">
+    <label>Add equipment: </label>
+    <input type="text" name="addEquip"><br>
+    <input type="submit" class="btn">
+  </form>
+</div>
+
+<!-- Add CSS -->
+<div align="center">
+  <form action="admin.php" method="post">
+    <?php
+    $getEquip = "select * from `resmng`.`equipments`;";
+    $equipments = mysqli_query($db, $getEquip);
+    while ($row = mysqli_fetch_assoc($equipments)) {
+      echo '<input type="radio" name="equipment" value="'.$row['equipment_name'].'">';
+      echo '<label>'.$row['equipment_name'].'</label><br>';
+    }
+    echo '<input type="submit">';
+    ?>
+  </form>
+</div>
+
 <div class="box1">
   <h1 style="text-align: center;">USERS</h1>
 <table>
@@ -62,9 +91,24 @@
       <th>DEPARTMENT</th>
       <th>ROLE</th>
   <?php
-  session_start();
   $slno = 0;
-  $db = mysqli_connect("localhost", "root", "", "resmng");
+
+  $createEqip = "CREATE TABLE IF NOT EXISTS `resmng`.`equipments` (equipment_name VARCHAR(50));";
+  mysqli_query($db, $createEqip);
+
+  if(isset($_POST['equipment'])){
+    $delEquip = $_POST['equipment'];
+    $outEquip = "DELETE FROM `resmng`.`equipments` WHERE equipment_name = '$delEquip'";
+    mysqli_query($db, $outEquip);
+  }
+
+  if(isset($_POST['addEquip'])){
+    $addEquip = $_POST['addEquip'];
+    $inEquip = "INSERT INTO `resmng`.`equipments` VALUES ('$addEquip')";
+    mysqli_query($db, $inEquip);
+    header("Location: admin.php");
+  }
+
   $feedback = "select * from resmng.users";
   $result = mysqli_query($db, $feedback);
   while ($row = mysqli_fetch_assoc($result)) {
@@ -112,6 +156,7 @@
 
   </table>
   </div>
+
   <?php
   if(isset($_SESSION['admin'])){
     //Do nothing

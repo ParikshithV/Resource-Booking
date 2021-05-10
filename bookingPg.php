@@ -226,14 +226,28 @@
           </table>
         <br>
         <label>Select equipment needed:</label><br>
-        <input type="checkbox" name="equipment[]" value="Hand mic">
+        <!-- <input type="checkbox" name="equipment[]" value="Hand mic">
         <label>Hand mic</label><br>
         <input type="checkbox" name="equipment[]" value="Audio console">
         <label>Audio console</label><br>
         <input type="checkbox" name="equipment[]" value="Speakers">
         <label>Speakers</label><br>
         <input type="checkbox" name="equipment[]" value="Projector">
-        <label>Projector</label><br>
+        <label>Projector</label><br> -->
+
+        <?php
+          $createEqip = "CREATE TABLE IF NOT EXISTS `resmng`.`equipments` (equipment_name VARCHAR(50));";
+          mysqli_query($db, $createEqip);
+
+          $getEquip = "select * from `resmng`.`equipments`;";
+          $equipments = mysqli_query($db, $getEquip);
+
+          while ($row = mysqli_fetch_assoc($equipments)) {
+            echo '<input type="checkbox" name="equipment[]" value="'.$row['equipment_name'].'">';
+            echo '<label>'.$row['equipment_name'].'</label> ';
+            echo '<input type="number" name="'.$row['equipment_name'].'_qty"  id="quantity" min="1" max="5"><br>';
+          }
+        ?>
 
         <br>
         <!-- <label>Additional comments:</label><br>

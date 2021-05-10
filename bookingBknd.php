@@ -17,7 +17,9 @@ if(isset($_SESSION['uname'])){
       $equipSel = $_POST['equipment'];
       $selectedE = "";
       foreach ($equipSel as $sel) {
-        $selectedE = $selectedE."<br>".$sel;
+        $inQty = $sel.'_qty';
+        $equipQty = $_POST[$inQty];
+        $selectedE = $selectedE."<br>".$sel." (".$equipQty.")";
       }
     }
 
@@ -29,7 +31,7 @@ if(isset($_SESSION['uname'])){
     header("Location: bookingPg.php");
   }
   else {
-    //header("Location: loginPage.php");
+    //header("Location: bookingPg.php");
   }
 }
 else {

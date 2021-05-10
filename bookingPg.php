@@ -245,7 +245,7 @@
           while ($row = mysqli_fetch_assoc($equipments)) {
             echo '<input type="checkbox" name="equipment[]" value="'.$row['equipment_name'].'">';
             echo '<label>'.$row['equipment_name'].'</label> ';
-            echo '<input type="number" name="'.$row['equipment_name'].'_qty"  id="quantity" min="1" max="5"><br>';
+            echo '<input type="number" name="'.$row['equipment_name'].'_qty"  id="quantity" value="1" min="1" max="5"><br>';
           }
         ?>
 

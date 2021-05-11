@@ -27,11 +27,10 @@
         text-align: left;
         padding: 5px;
         color:black;
-        border-radius:8px;
         top:2px;
       }
 
-      tr:nth-child(odd) {background-color: yellow;}
+      tr:nth-child(odd) {background-color: lightyellow;}
 
       table, th, td
       {
@@ -57,8 +56,8 @@
   session_start();
 ?>
 
-<!-- Add CSS -->
-<div class="box">
+<center><div>
+  <div class="box1">
     <div align="center">
       <h3 style="text-align: center;">MANAGING EQUIPMENTS:</h3>
       <form action="admin.php" method="post">
@@ -66,27 +65,57 @@
         <input type="text" name="addEquip" required pattern="^\S+$" title="Shouldn't include whitespaces but can include underscore">
         <input type="submit" class="btn"><br>
       </form>
-    </div>
-
-    <!-- Add CSS -->
+    </div><br>
+    <hr>
     <div align="center">
       <form action="admin.php" method="post">
-      <label><h3>Delete Equipments: </h3></label>
-        <?php
+      <h3>Delete Equipments: </h3>
+      <?php
         $getEquip = "select * from `resmng`.`equipments`;";
         $equipments = mysqli_query($db, $getEquip);
         while ($row = mysqli_fetch_assoc($equipments)) {
           echo '<input type="radio" name="equipment" value="'.$row['equipment_name'].'">';
           echo '<label>'.$row['equipment_name'].'</label><br>';
         }
-        echo '<input type="submit">';
-        ?>
+        echo '<br><input type="submit">';
+      ?>
       </form>
     </div>
-</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 
 <div class="box1">
-  <h1 style="text-align: center;">USERS</h1>
+<h1 style="text-align: center;">BOOKINGS</h1>
+<table>
+    <tr>
+      <th>SERIAL NO.</th>
+      <th>USERNAME</th>
+      <th>EMAIL</th>
+      <th>DEPT.</th>
+      <th>ROLE</th>
+      <th>DATE</th>
+      <th>EQIPMENT</th>
+  <?php
+  $slno = 0;
+  $db = mysqli_connect("localhost", "root", "", "resmng");
+  $feedback = "select * from resmng.bookingdb";
+  $result = mysqli_query($db, $feedback);
+  while ($row = mysqli_fetch_assoc($result)) {
+      $slno = $slno+1;
+      echo "<tr><td> ".$slno." </td>";
+      echo "<td>".$row['username']."</td>";
+      echo "<td>".$row['email']."</td>";
+      echo "<td>".$row['dept']."</td>";
+      echo "<td>".$row['role']."</td>";
+      echo "<td>".$row['date']."</td>";
+      echo "<td>".$row['equipment']."</td>";
+  }
+  ?>
+
+  </table>
+</div>
+
+<div class="box1">
+<h1 style="text-align: center;">USERS</h1>
 <table>
     <tr>
       <th>SERIAL NO.</th>
@@ -123,45 +152,12 @@
       echo "<td>".$row['email']."</td>";
       echo "<td>".$row['dept']."</td>";
       echo "<td>".$row['role']."</td>";
-      echo "<br>";
   }
   ?>
   </table>
-  </div>
+</div>
 
-  <div class="box1">
-
-  <h1 style="text-align: center;">BOOKINGS</h1>
-<table>
-    <tr>
-      <th>SERIAL NO.</th>
-      <th>USERNAME</th>
-      <th>EMAIL</th>
-      <th>DEPT.</th>
-      <th>ROLE</th>
-      <th>DATE</th>
-      <th>EQIPMENT</th>
-  <?php
-  $slno = 0;
-  $db = mysqli_connect("localhost", "root", "", "resmng");
-  $feedback = "select * from resmng.bookingdb";
-  $result = mysqli_query($db, $feedback);
-  while ($row = mysqli_fetch_assoc($result)) {
-      $slno = $slno+1;
-      echo "<tr><td> ".$slno." </td>";
-      echo "<td>".$row['username']."</td>";
-      echo "<td>".$row['email']."</td>";
-      echo "<td>".$row['dept']."</td>";
-      echo "<td>".$row['role']."</td>";
-      echo "<td>".$row['date']."</td>";
-      echo "<td>".$row['equipment']."</td>";
-      echo "<br>";
-  }
-  ?>
-
-  </table>
-  </div>
-
+</div></center>
   <?php
   if(isset($_SESSION['admin'])){
     //Do nothing

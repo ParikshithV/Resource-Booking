@@ -6,7 +6,16 @@
     <link rel="stylesheet" href="resBook.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> -->
     <script src="funcs.js"></script>
-    <?php include 'bookingBknd.php';?>
+    <?php //include 'bookingBknd.php';
+    session_start();
+    $db = mysqli_connect("localhost", "root", "", "resmng");
+    $createBkdb = "CREATE TABLE IF NOT EXISTS `resmng`.`bookingdb` (`username` VARCHAR(50), `email` VARCHAR(50), `dept` VARCHAR(50), `role` VARCHAR(100), `date` VARCHAR(50), `equipment` VARCHAR(100));";
+    mysqli_query($db, $createBkdb);
+
+    if(!isset($_SESSION['uname'])){
+      header("Location: loginPage.php");
+    }
+    ?>
 
   </head>
 
@@ -245,7 +254,7 @@
           while ($row = mysqli_fetch_assoc($equipments)) {
             echo '<input type="checkbox" name="equipment[]" value="'.$row['equipment_name'].'">';
             echo '<label>'.$row['equipment_name'].'</label> ';
-            echo '<input type="number" name="'.$row['equipment_name'].'_qty"  id="quantity" min="1" max="5"><br>';
+            echo '<input type="number" name="'.$row['equipment_name'].'_qty"  id="quantity" value="1" min="1" max="5"><br>';
           }
         ?>
 

@@ -42,7 +42,7 @@
 <body class="bg">
 <div>
         <ul class="navbar">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="loginPage.php">Login</a></li>
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
@@ -62,7 +62,7 @@
       <h3 style="text-align: center;">MANAGING EQUIPMENTS:</h3>
       <form action="admin.php" method="post">
         <label><h3> Add Equipment: </h3></label>
-        <input type="text" name="addEquip" required>
+        <input type="text" name="addEquip" required pattern="^\S+$" title="Shouldn't include whitespaces but can include underscore">
         <input type="submit" class="btn"><br>
       </form>
     </div><br>

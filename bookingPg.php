@@ -22,7 +22,7 @@
   <body class="bg">
       <div>
           <ul class="navbar">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="loginPage.php">Login</a></li>
             <li><a href="reg.php">Sign-Up</a></li>
             <li><a href="bookingPg.php">Booking page</a></li>

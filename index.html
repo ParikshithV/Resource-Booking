@@ -16,18 +16,25 @@
 
         </ul>
     </div>
+    <div class="slideshow-container">   <!-- slideshow -->
 
-    <div class="row">
-      <div class="column">
-        <img src="index1.jpg" alt="Snow" style="width:100%;height: 380px;">
+
+    <div class="mySlides">
+        <img src="index1.jpg" alt="Snow" style="width:100%;height: 390px;">
       </div>
-      <div class="column">
-        <img src="index2.jpg" alt="Forest" style="width:100%;height: 380px;">
+      <div class="mySlides">
+        <img src="index8.jpg" alt="Forest" style="width:100%;height: 390px;">
       </div>
-      <div class="column">
-        <img src="index3.jpg" alt="Mountains" style="width:100%;height: 380px;">
+      <div class="mySlides">
+        <img src="index6.jpg" alt="Mountains" style="width:100%;height: 390px;">
       </div>
-    </div>
+  </div>                                   <!-- for giving dots -->
+  <div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
 
     <center>
     <h1>About The Project</h2>
@@ -65,5 +72,26 @@
         <!-- <input type="button" class="btnAtIndex" value="&#x2192Go to Hall Booking Page" onclick="location.href='bookingPg.php';"> -->
     </div>
     </center>
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {              // javascript for image slides
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
     </body>
 </html>

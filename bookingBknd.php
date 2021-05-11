@@ -2,8 +2,9 @@
 session_start();
 
 $db = mysqli_connect("localhost", "root", "", "resmng");
-$createBkdb = "CREATE TABLE IF NOT EXISTS `resmng`.`bookingdb` (`username` VARCHAR(50), `email` VARCHAR(50), `dept` VARCHAR(50), `role` VARCHAR(100), `date` VARCHAR(50), `equipment` VARCHAR(100));";
-mysqli_query($db, $createBkdb);
+
+// $createBkdb = "CREATE TABLE IF NOT EXISTS `resmng`.`bookingdb` (`username` VARCHAR(50), `email` VARCHAR(50), `dept` VARCHAR(50), `role` VARCHAR(100), `date` VARCHAR(50), `equipment` VARCHAR(100));";
+// mysqli_query($db, $createBkdb);
 
 if(isset($_SESSION['uname'])){
   if(isset($_POST['dsel'])){
@@ -31,7 +32,7 @@ if(isset($_SESSION['uname'])){
     header("Location: bookingPg.php");
   }
   else {
-    //header("Location: bookingPg.php");
+    header("Location: bookingPg.php");
   }
 }
 else {

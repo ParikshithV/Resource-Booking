@@ -14,7 +14,14 @@
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin page</a></li>
-          <li style="float: right;"><a href="index.html">Logout</a></li>
+          <?php
+          if(isset($_SESSION['uname'])){
+            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
+          }
+          else{
+            echo '<li style="float: right;"><a href="loginPage.php">Login</a></li>';
+          }
+          ?>
         </ul>
     </div>
     <div>
@@ -54,7 +61,7 @@
         <input type="text" class="txtbx" id="srn" name="srn" value=" " style="visibility:collapse"><br><br>
 
         <label>Enter new password : </label>
-        <input  class="txtbx" name="Password" type="password" id="txtPassword" title="Password must contain: At least 8 characters, 1 Alphabet in Uppercase and 1 Number"
+        <input  class="txtbx" name="Password" type="password" id="txtPassword"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
          placeholder="Enter Password" /><br><br>
          <!-- required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" -->
 
@@ -92,5 +99,6 @@
       session_unset();
     }
   ?>
+
  </body>
 </html>

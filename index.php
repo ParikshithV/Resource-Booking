@@ -1,6 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About</title>
     <link rel="stylesheet" href="index.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"> -->
@@ -13,37 +14,38 @@
           <li><a href="reg.php">Sign-Up</a></li>
           <li><a href="bookingPg.php">Booking page</a></li>
           <li><a href="admin.php">Admin Page</a></li>
-
+          <?php
+          if(isset($_SESSION['uname'])){
+            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
+          }
+          else{
+            echo '<li style="float: right;"><a href="index.html">Login</a></li>';
+          }
+          ?>
         </ul>
     </div>
-    <div class="slideshow-container">   <!-- slideshow -->
 
-
-    <div class="mySlides">
-        <img src="index1.jpg" alt="Snow" style="width:100%;height: 390px;">
+    <div class="row">
+      <div class="column">
+        <img src="index1.jpg" alt="Snow" style="width:100%;height: 380px;">
       </div>
-      <div class="mySlides">
-        <img src="index8.jpg" alt="Forest" style="width:100%;height: 390px;">
+      <div class="column">
+        <img src="index2.jpg" alt="Forest" style="width:100%;height: 380px;">
       </div>
-      <div class="mySlides">
-        <img src="index6.jpg" alt="Mountains" style="width:100%;height: 390px;">
+      <div class="column">
+        <img src="index3.jpg" alt="Mountains" style="width:100%;height: 380px;">
       </div>
-  </div>                                   <!-- for giving dots -->
-  <div style="text-align:center">
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-</div>
-
+    </div>
 
     <center>
     <h1>About The Project</h2>
     <p style="width: 55%">
+      <h3>
         The aim is to create an interface which can be put to use in order to facilitate anybody who needs to utilize the department seminar hall at available timings with available equipment which may be needed for the event.    </p></center>
-      </p>
+      </h3>
     <center style="padding-top: 2%">
       <h3>Facilities and available equipment:</h3>
-    <div class="box" style="margin-bottom: 50px">
+    <div class="box">
       <h2>About</h2>
       <p style="text-align: left">
         MCA department has a seminar hall with projectors, mike and sound equipment.
@@ -52,7 +54,7 @@
         The data needs to be taken from the database where the user input data would be stored.
       </p>
     </div>
-    <div class="box" style="margin-bottom: 50px">
+    <div class="box">
       <h2>Facilities provided</h2>
       <p style="text-align: left">
         The project will contain functionalities for registration, user session login,
@@ -60,7 +62,7 @@
         The user would also be able to edit the booking details such as rescheduling, opting the equipment required and cancellation of booking.
       </p>
     </div>
-    <div class="box" style="margin-bottom: 50px">
+    <div class="box">
       <h2>Available equipment:</h2>
         <ul>
           <li>Hand mic</li><br>
@@ -72,26 +74,7 @@
         <!-- <input type="button" class="btnAtIndex" value="&#x2192Go to Hall Booking Page" onclick="location.href='bookingPg.php';"> -->
     </div>
     </center>
-    <script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {              // javascript for image slides
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
-</script>
+    
+          
     </body>
 </html>

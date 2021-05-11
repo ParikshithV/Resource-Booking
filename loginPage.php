@@ -16,11 +16,10 @@
           <li><a href="admin.php">Admin Page</a></li>
           <?php
           if(isset($_SESSION['uname'])){
-            echo '<li style="float: right;"><a href="index.html">Logout</a></li>';
+            echo '<li style="float: right;"><a href="logout.php">Logout</a></li>';
           }
           else{
-            echo '<li style="float: right;"><a href="index.html">Login</a></li>';
-
+            echo '<li style="float: right;"><a href="loginPage.php">Login</a></li>';
           }
           ?>
         </ul>
@@ -29,7 +28,7 @@
       <h1>Resource booking</h1>
   </div><br><br><br>
     <div id="loginID">
-      <form action="LoginBknd.php"method="post">
+      <form action="loginBknd.php"method="post">
       <h3>Enter login details :</h3>
         <label>Username : </label>
         <input class="txtbx" type="text" id="userName" name="userName" placeholder="   Required" required><br><br4>
@@ -40,7 +39,7 @@
         <br>
     </div>
     <?php
-        
+
       if(isset($_SESSION['error'])){
         echo '<script>swal("Error", "Invalid username or password", "error");</script>';
         session_unset();
